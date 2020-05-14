@@ -1,9 +1,10 @@
 package main
 
-import "example.com/user/image/rotate"
+import "example.com/user/image/process"
 
 func main() {
-  rotate.Rotate() 
+  process.Rotate() 
+  process.Resize(500, 500)
 }
 
 
