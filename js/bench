@@ -1,33 +1,6 @@
-# Sharp vs Bimg
-
-Simple performance test for Sharp (js) and Bimg (golang). Both libraries use `libvips` bindings (a C library for image processing) to provide an API for image processing on their corresponding language.
-
-## Benchmarks
-
-- go
-
-```
-$ go test -bench=. -benchtime=100x
-
-goos: darwin
-goarch: amd64
-pkg: example.com/user/image/process
-BenchmarkRotate-8                    100         345602435 ns/op
-BenchmarkResize300x300-8             100          47451269 ns/op
-BenchmarkResize500x500-8             100          75425005 ns/op
-PASS
-ok      example.com/user/image/process  47.423s
-```
-
-- js
-
-```
-$ npm run bench
 
 > sharp-test@1.0.0 bench /Users/dsbrgg/local/image-handler-tests/js
 > node indexBenchmark.js
-
-------------------------------------------------------------------------
 
 rotate [100x] x 0.14 ops/sec ±0.00% (0 runs sampled)
 rotate [100x] x 0.14 ops/sec ±0.00% (1 run sampled)
@@ -42,9 +15,6 @@ rotate [100x] { moe: 0.08418025708037821,
   sample:
    [ 7.172829661, 7.032237233, 7.14505701, 7.174456645, 7.053673662 ],
   variance: 0.004597815883077786 }
-
-------------------------------------------------------------------------
-
 resize(300, 300) [100x] x 1.36 ops/sec ±0.00% (0 runs sampled)
 resize(300, 300) [100x] x 1.53 ops/sec ±0.00% (1 run sampled)
 resize(300, 300) [100x] x 1.52 ops/sec ±78.57% (2 runs sampled)
@@ -76,9 +46,6 @@ resize(300, 300) [100x] { moe: 0.014791233503279896,
      0.669142329,
      0.67048242 ],
   variance: 0.0005419384280084566 }
-
-------------------------------------------------------------------------
-
 resize(500, 500) [100x] x 0.90 ops/sec ±0.00% (0 runs sampled)
 resize(500, 500) [100x] x 0.92 ops/sec ±0.00% (1 run sampled)
 resize(500, 500) [100x] x 0.94 ops/sec ±12.30% (2 runs sampled)
@@ -104,6 +71,3 @@ resize(500, 500) [100x] { moe: 0.0249334920645839,
      1.061139977,
      1.0325467 ],
   variance: 0.0010521801866114969 }
-
-------------------------------------------------------------------------
-```

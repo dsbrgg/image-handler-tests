@@ -10,6 +10,12 @@ func BenchmarkRotate(b *testing.B) {
   }
 }
 
+func BenchmarkResize300x300(b *testing.B) {
+  for n := 0; n < b.N; n++ {
+    Resize(300, 300)
+  }
+}
+
 func BenchmarkResize500x500(b *testing.B) {
   for n := 0; n < b.N; n++ {
     Resize(500, 500)
