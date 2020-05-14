@@ -12,12 +12,13 @@ $ go test -bench=. -benchtime=100x
 goos: darwin
 goarch: amd64
 pkg: example.com/user/image/process
-BenchmarkRotate-8                    100         341085092 ns/op
-BenchmarkResize300x300-8             100          47612444 ns/op
-BenchmarkResize500x500-8             100          75053209 ns/op
-BenchmarkSharpened-8                 100         625037186 ns/op
-PASS                                                           
-ok      example.com/user/image/process  110.093s  
+BenchmarkRotate-8          	     100	 333980015 ns/op
+BenchmarkResize300x300-8   	     100	  48340385 ns/op
+BenchmarkResize500x500-8   	     100	  78243903 ns/op
+BenchmarkSharpened-8       	     100	 611496130 ns/op
+BenchmarkWatermarker-8     	     100	 137132843 ns/op
+PASS
+ok  	example.com/user/image/process	122.248s  
 ```
 
 - js

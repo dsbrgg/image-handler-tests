@@ -27,3 +27,9 @@ func BenchmarkSharpened(b *testing.B) {
     Sharpened()
   }
 }
+
+func BenchmarkWatermarker(b *testing.B) {
+  for n := 0; n < b.N; n++ {
+    Watermarker()
+  }
+}

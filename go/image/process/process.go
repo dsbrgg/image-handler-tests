@@ -65,3 +65,31 @@ func Sharpened() {
 
   bimg.Write("large_sharpened.jpeg", newImage)
 }
+
+func Watermarker() {
+  buffer, err := bimg.Read("large.jpeg")
+  if err != nil {
+    fmt.Fprintln(os.Stderr, err)
+  }
+
+  watermark := bimg.Watermark {
+    Text:       "Chuck Norris (c) 2315",
+    Opacity:    1,
+    Width:      200,
+    DPI:        100,
+    Margin:     150,
+    Font:       "comic sans bold 12",
+    Background: bimg.Color {
+      R: 255, 
+      B: 255, 
+      G: 255,
+    },
+  }
+
+  newImage, err := bimg.NewImage(buffer).Watermark(watermark)
+  if err != nil {
+    fmt.Fprintln(os.Stderr, err)
+  }
+
+  bimg.Write("large_watermark.jpeg", newImage)
+}
