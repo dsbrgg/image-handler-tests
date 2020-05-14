@@ -26,7 +26,13 @@ func Resize(w int, h int) {
     fmt.Fprintln(os.Stderr, err)
   }
 
-  newImage, err := bimg.NewImage(buffer).ForceResize(w, h)
+  options := bimg.Options {
+    Width: w,
+    Height: h,
+    Quality: 100,
+  }
+
+  newImage, err := bimg.Resize(buffer, options)
   if err != nil {
     fmt.Fprintln(os.Stderr, err)
   }
