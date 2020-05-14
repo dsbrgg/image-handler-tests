@@ -127,4 +127,27 @@ sharpen [100x] { moe: 0.7265975326630086,
   variance: 0.3425460140489732 }
 
 ------------------------------------------------------------------------
+
+* This API does not exist on `bimg`
+
+modulate [100x] x 0.06 ops/sec ±0.00% (0 runs sampled)
+modulate [100x] x 0.06 ops/sec ±0.00% (1 run sampled)
+modulate [100x] x 0.05 ops/sec ±5.98% (2 runs sampled)
+modulate [100x] x 0.05 ops/sec ±12.75% (3 runs sampled)
+modulate [100x] x 0.06 ops/sec ±7.04% (4 runs sampled)
+modulate [100x] { moe: 0.8888445566855703,
+  rme: 4.858305992351004,
+  sem: 0.32018896134206426,
+  deviation: 0.715964283205908,
+  mean: 18.2953597012,
+  sample:
+   [ 17.762271093,
+     17.595748991,
+     19.291740005,
+     18.77134861,
+     18.055689807 ],
+  variance: 0.5126048548265496 }
+
+------------------------------------------------------------------------
+
 ```

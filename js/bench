@@ -1,0 +1,111 @@
+
+> sharp-test@1.0.0 bench /Users/dsbrgg/local/image-handler-tests/js
+> node indexBenchmark.js
+
+rotate [100x] x 0.14 ops/sec ±0.00% (0 runs sampled)
+rotate [100x] x 0.14 ops/sec ±0.00% (1 run sampled)
+rotate [100x] x 0.15 ops/sec ±40.95% (2 runs sampled)
+rotate [100x] x 0.14 ops/sec ±11.37% (3 runs sampled)
+rotate [100x] x 0.15 ops/sec ±6.21% (4 runs sampled)
+rotate [100x] { moe: 0.30285575406331644,
+  rme: 4.3372052731636,
+  sem: 0.10909789411502754,
+  deviation: 0.24395030744327587,
+  mean: 6.9827396904,
+  sample:
+   [ 7.406846062,
+     6.944330351,
+     6.7863237739999995,
+     6.898410185,
+     6.87778808 ],
+  variance: 0.05951175250166882 }
+resize(300, 300) [100x] x 1.49 ops/sec ±0.00% (0 runs sampled)
+resize(300, 300) [100x] x 1.60 ops/sec ±0.00% (1 run sampled)
+resize(300, 300) [100x] x 1.60 ops/sec ±46.98% (2 runs sampled)
+resize(300, 300) [100x] x 1.58 ops/sec ±10.94% (3 runs sampled)
+resize(300, 300) [100x] x 1.57 ops/sec ±5.83% (4 runs sampled)
+resize(300, 300) [100x] x 1.57 ops/sec ±3.94% (5 runs sampled)
+resize(300, 300) [100x] x 1.49 ops/sec ±2.98% (6 runs sampled)
+resize(300, 300) [100x] x 1.56 ops/sec ±3.01% (7 runs sampled)
+resize(300, 300) [100x] x 1.57 ops/sec ±2.53% (8 runs sampled)
+resize(300, 300) [100x] x 1.58 ops/sec ±2.19% (9 runs sampled)
+resize(300, 300) [100x] x 1.58 ops/sec ±1.95% (10 runs sampled)
+resize(300, 300) [100x] x 1.58 ops/sec ±1.77% (11 runs sampled)
+resize(300, 300) [100x] { moe: 0.01033915668950865,
+  rme: 1.6168280980133427,
+  sem: 0.0046974814582047475,
+  deviation: 0.016272553106446718,
+  mean: 0.63947161125,
+  sample:
+   [ 0.67325056,
+     0.62523669,
+     0.623559495,
+     0.632485035,
+     0.636976155,
+     0.638223317,
+     0.672240069,
+     0.639408161,
+     0.637064555,
+     0.632182333,
+     0.631659213,
+     0.631373752 ],
+  variance: 0.00026479598460212874 }
+resize(500, 500) [100x] x 0.97 ops/sec ±0.00% (0 runs sampled)
+resize(500, 500) [100x] x 1.01 ops/sec ±0.00% (1 run sampled)
+resize(500, 500) [100x] x 0.97 ops/sec ±29.29% (2 runs sampled)
+resize(500, 500) [100x] x 1.01 ops/sec ±6.45% (3 runs sampled)
+resize(500, 500) [100x] x 1.02 ops/sec ±4.15% (4 runs sampled)
+resize(500, 500) [100x] x 0.99 ops/sec ±3.15% (5 runs sampled)
+resize(500, 500) [100x] x 0.91 ops/sec ±2.41% (6 runs sampled)
+resize(500, 500) [100x] x 0.96 ops/sec ±3.78% (7 runs sampled)
+resize(500, 500) [100x] x 0.96 ops/sec ±3.23% (8 runs sampled)
+resize(500, 500) [100x] { moe: 0.028981409193865375,
+  rme: 2.8289824366267404,
+  sem: 0.012567827057183597,
+  deviation: 0.03770348117155079,
+  mean: 1.0244464164444447,
+  sample:
+   [ 1.03266374,
+     0.986121637,
+     1.030947219,
+     0.986261468,
+     0.983477663,
+     1.012441975,
+     1.10030663,
+     1.042988921,
+     1.044808495 ],
+  variance: 0.0014215524924534853 }
+sharpen [100x] x 0.04 ops/sec ±0.00% (0 runs sampled)
+sharpen [100x] x 0.05 ops/sec ±0.00% (1 run sampled)
+sharpen [100x] x 0.04 ops/sec ±20.22% (2 runs sampled)
+sharpen [100x] x 0.05 ops/sec ±4.83% (3 runs sampled)
+sharpen [100x] x 0.05 ops/sec ±3.16% (4 runs sampled)
+sharpen [100x] { moe: 0.6686411405061937,
+  rme: 3.0767715096770543,
+  sem: 0.2408649641592917,
+  deviation: 0.5385904332582268,
+  mean: 21.7319075662,
+  sample:
+   [ 22.237938221,
+     21.541245472,
+     22.321090461,
+     21.515911768,
+     21.043351909 ],
+  variance: 0.29007965479728437 }
+modulate [100x] x 0.06 ops/sec ±0.00% (0 runs sampled)
+modulate [100x] x 0.06 ops/sec ±0.00% (1 run sampled)
+modulate [100x] x 0.05 ops/sec ±5.98% (2 runs sampled)
+modulate [100x] x 0.05 ops/sec ±12.75% (3 runs sampled)
+modulate [100x] x 0.06 ops/sec ±7.04% (4 runs sampled)
+modulate [100x] { moe: 0.8888445566855703,
+  rme: 4.858305992351004,
+  sem: 0.32018896134206426,
+  deviation: 0.715964283205908,
+  mean: 18.2953597012,
+  sample:
+   [ 17.762271093,
+     17.595748991,
+     19.291740005,
+     18.77134861,
+     18.055689807 ],
+  variance: 0.5126048548265496 }

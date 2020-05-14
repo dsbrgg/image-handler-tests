@@ -27,4 +27,17 @@ const sharpen = (sigma, flat, jagged) => new Promise((resolve, reject) => {
     })
 })
 
-module.exports = { rotate, resize, sharpen }
+const modulate = (brightness, saturation, hue) => new Promise((resolve, reject) => {
+  sharp('large.jpeg')
+    .modulate({
+      brightness,
+      saturation,
+      hue
+    })
+    .toFile(`large_modulate.jpeg`, (err, info) => {
+      if (err) reject(err)
+      resolve(info)
+    })
+})
+
+module.exports = { rotate, resize, sharpen, modulate }
