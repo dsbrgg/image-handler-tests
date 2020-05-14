@@ -12,11 +12,12 @@ $ go test -bench=. -benchtime=100x
 goos: darwin
 goarch: amd64
 pkg: example.com/user/image/process
-BenchmarkRotate-8                    100         345602435 ns/op
-BenchmarkResize300x300-8             100          47451269 ns/op
-BenchmarkResize500x500-8             100          75425005 ns/op
-PASS
-ok      example.com/user/image/process  47.423s
+BenchmarkRotate-8                    100         341085092 ns/op
+BenchmarkResize300x300-8             100          47612444 ns/op
+BenchmarkResize500x500-8             100          75053209 ns/op
+BenchmarkSharpened-8                 100         625037186 ns/op
+PASS                                                           
+ok      example.com/user/image/process  110.093s  
 ```
 
 - js
@@ -104,6 +105,26 @@ resize(500, 500) [100x] { moe: 0.0249334920645839,
      1.061139977,
      1.0325467 ],
   variance: 0.0010521801866114969 }
+
+------------------------------------------------------------------------
+
+sharpen [100x] x 0.04 ops/sec ±0.00% (0 runs sampled)
+sharpen [100x] x 0.04 ops/sec ±0.00% (1 run sampled)
+sharpen [100x] x 0.04 ops/sec ±8.77% (2 runs sampled)
+sharpen [100x] x 0.05 ops/sec ±3.65% (3 runs sampled)
+sharpen [100x] x 0.05 ops/sec ±3.70% (4 runs sampled)
+sharpen [100x] { moe: 0.7265975326630086,
+  rme: 3.2282603305484763,
+  sem: 0.26174262703998874,
+  deviation: 0.5852743066707894,
+  mean: 22.507402076199998,
+  sample:
+   [ 22.907989553,
+     23.226350987,
+     22.554092604,
+     21.997102006,
+     21.851475231 ],
+  variance: 0.3425460140489732 }
 
 ------------------------------------------------------------------------
 ```

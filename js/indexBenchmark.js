@@ -1,7 +1,7 @@
 // https://stackoverflow.com/questions/31624055/benchmark-asynchronous-code-benchmark-js-node-js
 
 const { Benchmark } = require('benchmark')
-const { rotate, resize } = require('./index')
+const { rotate, resize, sharpen } = require('./index')
 
 const suite = new Benchmark.Suite()
 const onCycle = event => { console.log(String(event.target)) }
@@ -45,6 +45,20 @@ suite
     fn: async function (deferred) {
       for (let i = 0; i <= 100; i++) {
         await resize(500, 500)
+      }
+
+      deferred.resolve()
+    }
+  })
+
+suite
+  .add('sharpen [100x]', {
+    onCycle,
+    onComplete,
+    defer: true,
+    fn: async function (deferred) {
+      for (let i = 0; i <= 100; i++) {
+        await sharpen(5, 5, 5)
       }
 
       deferred.resolve()

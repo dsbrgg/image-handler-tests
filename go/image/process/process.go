@@ -17,7 +17,7 @@ func Rotate() {
     fmt.Fprintln(os.Stderr, err)
   }
 
-  bimg.Write("rotate_large.jpeg", newImage)
+  bimg.Write("large_rotate.jpeg", newImage)
 }
 
 func Resize(w int, h int) {
@@ -31,6 +31,31 @@ func Resize(w int, h int) {
     fmt.Fprintln(os.Stderr, err)
   }
 
-  fileName := fmt.Sprintf("%s%d%s%d%s", "resize_", w, "x", h, ".jpeg")
+  fileName := fmt.Sprintf("%s%d%s%d%s", "large_", w, "x", h, ".jpeg")
   bimg.Write(fileName, newImage)
+}
+
+func Sharpened() {
+  buffer, err := bimg.Read("large.jpeg")
+  if err != nil {
+    fmt.Fprintln(os.Stderr, err)
+  }
+
+  options := bimg.Options {
+    Sharpen: bimg.Sharpen {
+      Radius: 5,
+      X1: 5.0,
+      Y2: 5.0,
+      Y3: 5.0,
+      M1: 5.0,
+      M2: 5.0,
+    },
+  }
+
+  newImage, err := bimg.NewImage(buffer).Process(options)
+  if err != nil {
+    fmt.Fprintln(os.Stderr, err)
+  }
+
+  bimg.Write("large_sharpened.jpeg", newImage)
 }

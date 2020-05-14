@@ -21,3 +21,9 @@ func BenchmarkResize500x500(b *testing.B) {
     Resize(500, 500)
   }
 }
+
+func BenchmarkSharpened(b *testing.B) {
+  for n := 0; n < b.N; n++ {
+    Sharpened()
+  }
+}
