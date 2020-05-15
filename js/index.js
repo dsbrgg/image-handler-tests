@@ -40,4 +40,19 @@ const modulate = (brightness, saturation, hue) => new Promise((resolve, reject) 
     })
 })
 
-module.exports = { rotate, resize, sharpen, modulate }
+const toPNG = () => new Promise((resolve, reject) => {
+  sharp('large.jpeg')
+    .png()
+    .toFile(`large_modulate.png`, (err, info) => {
+      if (err) reject(err)
+      resolve(info)
+    })
+})
+
+module.exports = {
+  rotate,
+  resize,
+  sharpen,
+  modulate,
+  toPNG
+}

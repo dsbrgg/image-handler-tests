@@ -12,13 +12,14 @@ $ go test -bench=. -benchtime=100x
 goos: darwin
 goarch: amd64
 pkg: example.com/user/image/process
-BenchmarkRotate-8          	     100	 333980015 ns/op
-BenchmarkResize300x300-8   	     100	  48340385 ns/op
-BenchmarkResize500x500-8   	     100	  78243903 ns/op
-BenchmarkSharpened-8       	     100	 611496130 ns/op
-BenchmarkWatermarker-8     	     100	 137132843 ns/op
+BenchmarkRotate-8                    100         343743288 ns/op
+BenchmarkResize300x300-8             100          49616699 ns/op
+BenchmarkResize500x500-8             100          79599991 ns/op
+BenchmarkSharpened-8                 100         638000870 ns/op
+BenchmarkWatermarker-8               100         141140558 ns/op
+BenchmarkConvertPNG-8                100         586822929 ns/op
 PASS
-ok  	example.com/user/image/process	122.248s  
+ok      example.com/user/image/process  185.874s
 ```
 
 - js
@@ -148,6 +149,26 @@ modulate [100x] { moe: 0.8888445566855703,
      18.77134861,
      18.055689807 ],
   variance: 0.5126048548265496 }
+
+------------------------------------------------------------------------
+
+toPNG [100x] x 0.02 ops/sec ±0.00% (0 runs sampled)
+toPNG [100x] x 0.02 ops/sec ±0.00% (1 run sampled)
+toPNG [100x] x 0.02 ops/sec ±0.85% (2 runs sampled)
+toPNG [100x] x 0.02 ops/sec ±0.17% (3 runs sampled)
+toPNG [100x] x 0.02 ops/sec ±4.05% (4 runs sampled)
+toPNG [100x] { moe: 1.5399598250194424,
+  rme: 2.8395002459398166,
+  sem: 0.5547405709724217,
+  deviation: 1.2404376265713815,
+  mean: 54.2334809522,
+  sample:
+   [ 53.7181583,
+     53.646667304,
+     53.681197278,
+     56.451960925,
+     53.669420954 ],
+  variance: 1.5386855054140423 }
 
 ------------------------------------------------------------------------
 

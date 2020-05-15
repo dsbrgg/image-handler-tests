@@ -93,3 +93,17 @@ func Watermarker() {
 
   bimg.Write("large_watermark.jpeg", newImage)
 }
+
+func ConvertPNG() {
+  buffer, err := bimg.Read("large.jpeg")
+  if err != nil {
+    fmt.Fprintln(os.Stderr, err)
+  }
+  
+  newImage, err := bimg.NewImage(buffer).Convert(bimg.PNG)
+  if err != nil {
+    fmt.Fprintln(os.Stderr, err)
+  }
+
+  bimg.Write("large.png", newImage)
+}

@@ -7,4 +7,5 @@ func main() {
   process.Resize(500, 500)
   process.Sharpened()
   process.Watermarker()
+  process.ConvertPNG()
 }

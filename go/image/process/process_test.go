@@ -33,3 +33,9 @@ func BenchmarkWatermarker(b *testing.B) {
     Watermarker()
   }
 }
+
+func BenchmarkConvertPNG(b *testing.B) {
+  for n := 0; n < b.N; n++ {
+    ConvertPNG()
+  }
+}
