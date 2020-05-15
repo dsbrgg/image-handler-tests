@@ -43,7 +43,7 @@ const modulate = (brightness, saturation, hue) => new Promise((resolve, reject) 
 const toPNG = () => new Promise((resolve, reject) => {
   sharp('large.jpeg')
     .png()
-    .toFile(`large_modulate.png`, (err, info) => {
+    .toFile(`large.png`, (err, info) => {
       if (err) reject(err)
       resolve(info)
     })
