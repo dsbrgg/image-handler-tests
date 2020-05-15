@@ -39,3 +39,9 @@ func BenchmarkConvertPNG(b *testing.B) {
     ConvertPNG()
   }
 }
+
+func BenchmarkCrop(b *testing.B) {
+  for n := 0; n < b.N; n++ {
+    Crop()
+  }
+}

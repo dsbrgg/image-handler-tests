@@ -8,4 +8,5 @@ func main() {
   process.Sharpened()
   process.Watermarker()
   process.ConvertPNG()
+  process.Crop()
 }

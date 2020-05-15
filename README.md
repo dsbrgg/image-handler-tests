@@ -12,14 +12,15 @@ $ go test -bench=. -benchtime=100x
 goos: darwin
 goarch: amd64
 pkg: example.com/user/image/process
-BenchmarkRotate-8                    100         343743288 ns/op
-BenchmarkResize300x300-8             100          49616699 ns/op
-BenchmarkResize500x500-8             100          79599991 ns/op
-BenchmarkSharpened-8                 100         638000870 ns/op
-BenchmarkWatermarker-8               100         141140558 ns/op
-BenchmarkConvertPNG-8                100         586822929 ns/op
+BenchmarkRotate-8                    100         345388913 ns/op
+BenchmarkResize300x300-8             100          49381323 ns/op
+BenchmarkResize500x500-8             100          80474150 ns/op
+BenchmarkSharpened-8                 100         645960945 ns/op
+BenchmarkWatermarker-8               100         148487707 ns/op
+BenchmarkConvertPNG-8                100         601702697 ns/op
+BenchmarkCrop-8                      100         167317632 ns/op
 PASS
-ok      example.com/user/image/process  185.874s
+ok      example.com/user/image/process  206.064s
 ```
 
 - js
@@ -169,6 +170,32 @@ toPNG [100x] { moe: 1.5399598250194424,
      56.451960925,
      53.669420954 ],
   variance: 1.5386855054140423 }
+
+------------------------------------------------------------------------
+
+crop [100x] x 0.68 ops/sec ±0.00% (0 runs sampled)
+crop [100x] x 0.69 ops/sec ±0.00% (1 run sampled)
+crop [100x] x 0.67 ops/sec ±6.64% (2 runs sampled)
+crop [100x] x 0.69 ops/sec ±3.70% (3 runs sampled)
+crop [100x] x 0.69 ops/sec ±2.08% (4 runs sampled)
+crop [100x] x 0.68 ops/sec ±1.45% (5 runs sampled)
+crop [100x] x 0.68 ops/sec ±1.11% (6 runs sampled)
+crop [100x] x 0.69 ops/sec ±0.94% (7 runs sampled)
+crop [100x] { moe: 0.012288153727718505,
+  rme: 0.8396147976616669,
+  sem: 0.005195836671339748,
+  deviation: 0.0146960453769683,
+  mean: 1.4635465885,
+  sample:
+   [ 1.463463409,
+     1.448240657,
+     1.4913849049999999,
+     1.4541187230000001,
+     1.455145761,
+     1.469576043,
+     1.475601868,
+     1.450841342 ],
+  variance: 0.00021597374972191132 }
 
 ------------------------------------------------------------------------
 

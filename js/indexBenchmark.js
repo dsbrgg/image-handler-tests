@@ -6,7 +6,8 @@ const {
   resize,
   sharpen,
   modulate,
-  toPNG
+  toPNG,
+  crop
 } = require('./index')
 
 const suite = new Benchmark.Suite()
@@ -93,6 +94,20 @@ suite
     fn: async function (deferred) {
       for (let i = 0; i <= 100; i++) {
         await toPNG()
+      }
+
+      deferred.resolve()
+    }
+  })
+
+suite
+  .add('crop [100x]', {
+    onCycle,
+    onComplete,
+    defer: true,
+    fn: async function (deferred) {
+      for (let i = 0; i <= 100; i++) {
+        await crop(0, 0, 1024, 768)
       }
 
       deferred.resolve()

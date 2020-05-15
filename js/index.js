@@ -49,10 +49,20 @@ const toPNG = () => new Promise((resolve, reject) => {
     })
 })
 
+const crop = (left, top, width, height) => new Promise((resolve, reject) => {
+  sharp('large.jpeg')
+    .extract({ left, top, width, height })
+    .toFile('large_crop.jpeg', (err, info) => {
+      if (err) reject(err)
+      resolve(info)
+    })
+})
+
 module.exports = {
   rotate,
   resize,
   sharpen,
   modulate,
-  toPNG
+  toPNG,
+  crop
 }

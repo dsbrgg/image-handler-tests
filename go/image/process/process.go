@@ -107,3 +107,17 @@ func ConvertPNG() {
 
   bimg.Write("large.png", newImage)
 }
+
+func Crop() {
+  buffer, err := bimg.Read("large.jpeg")
+  if err != nil {
+    fmt.Fprintln(os.Stderr, err)
+  }
+  
+  newImage, err := bimg.NewImage(buffer).Crop(1024, 768, bimg.GravitySmart)
+  if err != nil {
+    fmt.Fprintln(os.Stderr, err)
+  }
+
+  bimg.Write("large_crop.jpeg", newImage)
+}
